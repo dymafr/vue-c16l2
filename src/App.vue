@@ -1,7 +1,7 @@
 <template>
   <div class="p-20">
     <button class="btn btn-primary" @click="show = !show">Display</button>
-    <Transition appear name="fade">
+    <Transition @enter="onEnter" appear name="fade">
       <h1 v-if="show">Bonjour !</h1>
     </Transition>
   </div>
@@ -9,6 +9,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
+function onEnter() {
+  console.log('test');
+}
 
 const show = ref(true);
 </script>
