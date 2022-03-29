@@ -20,18 +20,31 @@ const show = ref(true);
 <style lang="scss">
 @import './assets/scss/base.scss';
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+// .fade-enter-from,
+// .fade-leave-to {
+//   opacity: 0;
+// }
+
+// .fade-enter-to,
+// .fade-leave-from {
+//   opacity: 1;
+// }
+
+// .fade-leave-active,
+.fade-enter-active {
+  // transition: all 2s;
+  animation: smallToBig 1s;
 }
 
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
+@keyframes smallToBig {
+  0% {
+    opacity: 0;
+    font-size: 5px;
+  }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 2s;
+  100% {
+    opacity: 1;
+    font-size: 32px;
+  }
 }
 </style>
